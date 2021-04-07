@@ -10,11 +10,7 @@
  * Strings have 3 common characters - 2 "a"s and 1 "c".
  */
 function countChars(str) {
-  return str.split('').reduce((obj, char) => {
-    // eslint-disable-next-line no-param-reassign
-    obj[char] = (obj[char] || 0) + 1;
-    return obj;
-  }, {});
+  return str.split('').reduce((obj, char) => ({ ...obj, [char]: (obj[char] || 0) + 1 }), {});
 }
 
 function getCommonCharacterCount(s1, s2) {
